@@ -2,6 +2,17 @@
 //CASOS DE PRUEBA PARA LAS CLASES DE LA FASE GRUPAL E INDIVIDUAL        ADRIAN
 //****************************************************************************
 
+// SECCIONES DIVIDIDAS CON EN CODIGO CON
+    //###########################################################################################################
+
+
+// SUBSECCIONES DIVIDIDAS EN CODIGO Y TEMRINAL CON
+    // cout<<"***********************************************************************************************"<<endl;
+    // system("pause");
+
+
+
+
 #include <iostream>
 #include <vector>
 #include "Producto.h"
