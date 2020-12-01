@@ -1,4 +1,4 @@
-//Clase Venta        PI
+//Clase Venta  con modificaciones para la parte individual ___ Adrian     PI
 
 #ifndef VENTA_H
 #define VENTA_H
@@ -7,18 +7,19 @@
 #include <string>
 #include <vector>
 #include "Producto.h"
+#include "Cliente.h"
 #include "Calculadora.h"
 using namespace std;
 
 class Venta{
     string tipo_cliente;
     float total;
-    string cliente;
+    Cliente cliente;
 
     public:
     vector <Producto> carrito;
 
-    Venta(string t_cliente, string cl){
+    Venta(string t_cliente, Cliente cl){
         if ((t_cliente == "empleado") || (t_cliente == "externo")) {
         tipo_cliente = t_cliente;
         cliente = cl;
@@ -26,7 +27,7 @@ class Venta{
 
         cout<<"------------------------\n+"<<endl;
         cout<<"Tipo de cliente: "+tipo_cliente<< endl;
-        cout<<"Cliente: "+cliente<< endl;
+        cout<<"Cliente: "+cliente.mostrar_nombre(false)<< endl;
         cout<<"+\n------------------------"<<endl;
         cout<<"Venta:\nCliente registrado exitosamente!"<< endl; }
 
@@ -72,9 +73,9 @@ class Venta{
     }
     string mostrar_cliente(bool verbose= true){
         if (verbose){cout<<"------------------------"<<endl;
-        cout<<"Cliente: "+cliente<< endl;
+        cout<<"Cliente: "+cliente.mostrar_nombre(false)<< endl;
         cout<<"------------------------"<<endl;}
-        return cliente;
+        return cliente.mostrar_nombre(false);
     }
 
     string mostrar_Tcliente(bool verbose = true){

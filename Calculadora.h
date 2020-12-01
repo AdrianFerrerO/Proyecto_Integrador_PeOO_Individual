@@ -2,8 +2,6 @@
 
 #ifndef CALCULADORA_H
 #define CALCULADORA_H
-#include "Producto.h"
-#include "Venta.h"
 #include <iostream>
 #include <string>
 

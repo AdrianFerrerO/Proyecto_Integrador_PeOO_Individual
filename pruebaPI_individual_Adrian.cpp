@@ -1,8 +1,13 @@
+//****************************************************************************
+//CASOS DE PRUEBA PARA LAS CLASES DE LA FASE GRUPAL E INDIVIDUAL        ADRIAN
+//****************************************************************************
+
 #include <iostream>
 #include <vector>
 #include "Producto.h"
-#include "Venta.h"
+#include "Venta_ver_Adrian.h"
 #include "Registro.h"
+#include "Cliente.h"
 #include "Calculadora.h"
 
 int main(){
@@ -27,12 +32,60 @@ int main(){
     cout<<"***********************************************************************************************"<<endl;
     system("pause");
 
+    //###########################################################################################################
+    // CLASE CLIENTE ------------------------------(INDIVIDUAL---------------------------------------------------
+    //###########################################################################################################
+    cout<<"CLASE CLIENTE -----------------------(INDIVIDUAL)---------------"<< endl;
+
+    cout<<"INICIALIZACION CON REGISTRO DE TARJETA"<< endl;
+    Cliente cl1{"Carlos","Calle O",true,"549845"};
+
+    cout<< "INICIZALIZACION SIN TARJETA (2 FORMAS)"<< endl;
+    Cliente cl2{"Jose","Calle P",false};
+    Cliente cl3{"Luis","Calle Q"};
+
+
+    cout<< "MOSTRAR_DATOS DE LOS TRES CLIENTES"<< endl;
+    cl1.mostrar_datos();
+    cl2.mostrar_datos();
+    cl3.mostrar_datos();
+
+    cout<<"***********************************************************************************************"<<endl;
+    system("pause");
+
+    cout<< "CAMBIAR_OPCIONES_PAGO PARA UN CLIENTE CON TARJETA"<< endl;
+    cl1.cambiar_opciones_pago("contra","Calle R",true, "87978");
+    cl1.cambiar_opciones_pago("pass","Calle R",true, "87978");
+    cl1.mostrar_datos();
+
+    cout<< "CAMBIAR_OPCIONES_PAGO PARA UN CLIENTE SIN TARJETA"<< endl;
+    cl1.cambiar_opciones_pago("pass","Calle S");
+    cl1.mostrar_datos();
+
+
+    cout<< "MOSTRAR NOMBRE"<< endl;
+    cl1.mostrar_nombre();
+
+
+    cout<<"CAMBIAR NOMBRE"<< endl;
+    cl1.cambiar_nombre("pass", "Ramirez");
+    cl1.mostrar_nombre();
+
+
+    cout<<"***********************************************************************************************"<<endl;
+    system("pause");
+
+    //###########################################################################################################
+    // CLASE CLIENTE ------------------------------(INDIVIDUAL---------------------------------------------------
+    //###########################################################################################################
+
+
 
     //###########################################################################################################
     cout<<"CLASE VENTA"<< endl;
 
-    cout<<"INICIALIZACION"<< endl;
-    Venta venta1{"externo", "Jose Luis"};
+    cout<<"INICIALIZACION CON LA NUEVA CLASE CLIENTE"<< endl;
+    Venta venta1{"externo", cl2};
 
     cout<<"AGREGAR_CARRITO"<< endl;
     vector<Producto> lista_prods ={prod1, prod2};
@@ -76,7 +129,7 @@ int main(){
     //###########################################################################################################
     cout<<"REGISTRO DE DOS CLIENTES"<< endl;
 
-    Venta venta2 {"empleado", "Favio"};
+    Venta venta2 {"empleado", cl3};
 
     vector<Producto> lista_prods2 ={prod3, prod4};
     venta2.agregar_carrito(lista_prods2);
